@@ -18,7 +18,10 @@ import com.douglei.api.doc.js.variable.entity.common.CommonParamEntity;
 import com.douglei.api.doc.js.variable.entity.index.Index;
 import com.douglei.api.doc.metadata.ApiCatalogMetadata;
 import com.douglei.api.doc.metadata.ApiMetadata;
+import com.douglei.api.doc.types.DataType;
 import com.douglei.api.doc.types.ParamStructType;
+import com.douglei.api.doc.types.entity.DataTypeMatchEntity;
+import com.douglei.api.doc.types.entity.DataTypeMatcher;
 import com.douglei.tools.instances.scanner.ClassScanner;
 
 /**
@@ -308,6 +311,17 @@ public abstract class ApiDocBuilder {
 	 */
 	public ApiDocBuilder setClassLoader(ClassLoader classloader) {
 		ApiDocBuilderContext.setClassLoader(classloader);
+		return this;
+	}
+	
+	/**
+	 * 添加数据类型匹配实体
+	 * 该实体对应的功能, 是根据类型, 自动匹配到 {@link DataType} 的值, 程序默认内置了一些映射, 如果出现没有的, 则可以通过该方法, 增加新的映射
+	 * @param entities
+	 * @return
+	 */
+	public ApiDocBuilder setDataTypeMatchEntities(DataTypeMatchEntity... entities) {
+		DataTypeMatcher.addDataTypeMatchEntities(entities);
 		return this;
 	}
 }

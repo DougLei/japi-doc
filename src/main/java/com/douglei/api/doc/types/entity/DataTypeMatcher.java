@@ -94,9 +94,13 @@ public class DataTypeMatcher {
 	 * @param entities
 	 * @throws ClassNotFoundException 
 	 */
-	public static void addDataTypeMatchEntities(DataTypeMatchEntity... entities) throws ClassNotFoundException {
+	public static void addDataTypeMatchEntities(DataTypeMatchEntity... entities) {
 		for (DataTypeMatchEntity entity : entities) {
-			cache.put(entity.getClass_(), toValue(entity.getDataType()));
+			try {
+				cache.put(entity.getClass_(), toValue(entity.getDataType()));
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
