@@ -24,7 +24,7 @@ public @interface Api {
 	String value() default "";
 	
 	/**
-	 * 操作名
+	 * 操作名, 如果没有配置, 则使用方法名
 	 * @return
 	 */
 	String name() default "";

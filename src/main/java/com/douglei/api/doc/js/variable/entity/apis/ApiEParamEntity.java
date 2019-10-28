@@ -7,6 +7,7 @@ import com.douglei.api.doc.ApiDocBuilderContext;
 import com.douglei.api.doc.annotation.ApiEntityParam;
 import com.douglei.api.doc.types.DataType;
 import com.douglei.api.doc.types.ParamStructType;
+import com.douglei.api.doc.types.entity.DataTypeMatcher;
 import com.douglei.tools.utils.StringUtil;
 
 /**
@@ -31,7 +32,7 @@ public class ApiEParamEntity extends ApiParamEntity_{
 
 	private DataType setDataType(DataType dataType, Class<?> type) {
 		if(dataType == DataType.NULL) {
-			dataType = DataType.match(type);
+			dataType = DataTypeMatcher.match(type);
 		}
 		this.dataType = dataType.name();
 		return dataType;

@@ -13,17 +13,17 @@ import com.douglei.api.doc.types.ParamStructType;
  * @author DougLei
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD, ElementType.METHOD})
+@Target({ElementType.FIELD, ElementType.METHOD}) // 用到方法上, 方法最好只能是get/set方法, 或者是没有参数, 且有返回值, 或没有返回值, 且只有一个传入参数
 public @interface ApiEntityParam {
 	
 	/**
-	 * 参数名
+	 * 参数名, 如果没有配置, 则使用属性名, 获取方法名, 如果是get/set方法, 则会去除get/set后, 将首字母小写, 作为属性名
 	 * @return
 	 */
 	String name() default "";
 	
 	/**
-	 * 数据类型
+	 * 数据类型, 如果没有配置, 则使用属性的类型, 方法的返回值类型, 或方法的参数类型
 	 * @return
 	 */
 	DataType dataType() default DataType.NULL;
@@ -75,7 +75,7 @@ public @interface ApiEntityParam {
 	Class<?> entity() default Object.class;
 
 	/**
-	 * 对应参数的实体class结构
+	 * 对应参数的实体class结构, 如果没有配置, 则会根据属性的类型, 方法的参数类型, 或方法的返回值类型自动判断
 	 * @return
 	 */
 	ParamStructType entityStruct() default ParamStructType.NULL;

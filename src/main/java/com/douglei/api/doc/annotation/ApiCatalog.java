@@ -20,7 +20,7 @@ public @interface ApiCatalog {
 	String value() default "";
 	
 	/**
-	 * 目录名
+	 * 目录名, 如果没有配置, 则使用类名, 不包括包名
 	 * @return
 	 */
 	String name() default "";
