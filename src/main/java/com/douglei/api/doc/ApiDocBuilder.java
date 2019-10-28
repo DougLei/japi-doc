@@ -46,7 +46,6 @@ public abstract class ApiDocBuilder {
 	private CommonParamEntity commonResponse = new CommonParamEntity("commonResponse");
 	
 	private String[] scanPackages =new File(System.getProperty("user.dir")+ File.separatorChar +"src"+File.separatorChar+"main"+File.separatorChar+"java").list();
-	private ClassLoader classloader;
 	
 	/**
 	 * 输出数据
@@ -308,7 +307,6 @@ public abstract class ApiDocBuilder {
 	 * @return
 	 */
 	public ApiDocBuilder setClassLoader(ClassLoader classloader) {
-		this.classloader = classloader;
 		ApiDocBuilderContext.setClassLoader(classloader);
 		return this;
 	}
