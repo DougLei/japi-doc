@@ -21,7 +21,7 @@ public class ApiFolderBuilder extends ApiDocBuilder{
 	
 	@Override
 	protected void build_() throws Exception {
-		File folder = new File(path + name + "-" + version);
+		File folder = new File(path + fileName + "-" + version);
 		if(!folder.exists()) {
 			folder.mkdirs();
 		}
@@ -49,7 +49,7 @@ public class ApiFolderBuilder extends ApiDocBuilder{
 		}
 		
 		try{
-			out = new FileOutputStream(getFile(path + name + "-" + version + File.separatorChar + "js" + File.separatorChar + "api.data.js"));
+			out = new FileOutputStream(getFile(path + fileName + "-" + version + File.separatorChar + "js" + File.separatorChar + "api.data.js"));
 			writeApiData(out);
 		}catch(Exception e){
 			throw e;

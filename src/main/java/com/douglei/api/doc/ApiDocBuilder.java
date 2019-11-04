@@ -33,7 +33,8 @@ public abstract class ApiDocBuilder {
 	
 	protected static final String apiDocTemplateFileName = "api-doc-template.zip";
 	
-	protected String name = "api文档";
+	protected String fileName = "api文档";
+	protected String title = fileName;
 	protected String version = "1.0";
 	protected String path = System.getProperty("user.dir") + File.separatorChar + "target" + File.separatorChar; // 生成api文档的路径, 在当前项目的target目录下
 
@@ -73,7 +74,8 @@ public abstract class ApiDocBuilder {
 	 * 输出相关参数数据的日志
 	 */
 	protected void logParams() {
-		logger.info("生成api文档的名称和标题={}", name);
+		logger.info("生成api文档的文件名={}", fileName);
+		logger.info("生成api文档的标题={}", title);
 		logger.info("api版本={}", version);
 		logger.info("生成api文档的绝对路径={}", path);
 		logger.info("api作者={}", Arrays.toString(authors));
@@ -101,7 +103,7 @@ public abstract class ApiDocBuilder {
 	 */
 	protected void writeApiData(OutputStream out) throws IOException, ClassNotFoundException {
 		List<ApiCatalogMetadata> apiCatalogs = apiCatalogMetadatas();
-		Index index = new Index(name, version, (short)apiCatalogs.size());
+		Index index = new Index(title, version, (short)apiCatalogs.size());
 		
 		ApiMetadata api = null;
 		write(out, "var apis={");
@@ -174,11 +176,21 @@ public abstract class ApiDocBuilder {
 	
 	/**
 	 * 生成api文档的文件名, 默认为api文档
-	 * @param name
+	 * @param fileName
 	 * @return
 	 */
-	public ApiDocBuilder setName(String name) {
-		this.name = name;
+	public ApiDocBuilder setFileName(String fileName) {
+		this.fileName = fileName;
+		return this;
+	}
+	
+	/**
+	 * 生成api文档的标题, 默认为api文档
+	 * @param title
+	 * @return
+	 */
+	public ApiDocBuilder setName(String title) {
+		this.title = title;
 		return this;
 	}
 	

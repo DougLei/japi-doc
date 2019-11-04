@@ -18,7 +18,7 @@ public class ApiZipBuilder extends ApiDocBuilder{
 		short len;
 		ZipEntry entryIn, entryOut;
 		try(ZipInputStream zipIn = new ZipInputStream(getClass().getClassLoader().getResourceAsStream(apiDocTemplateFileName));
-			ZipOutputStream zipOut = new ZipOutputStream(new FileOutputStream(new File(path + name + "-" + version + ".zip")))){
+			ZipOutputStream zipOut = new ZipOutputStream(new FileOutputStream(new File(path + fileName + "-" + version + ".zip")))){
 			while((entryIn=zipIn.getNextEntry()) != null) {
 				if(entryIn.isDirectory()) {
 					zipOut.putNextEntry(entryIn);

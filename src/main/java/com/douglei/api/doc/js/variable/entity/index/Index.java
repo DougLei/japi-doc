@@ -12,12 +12,12 @@ import com.douglei.api.doc.metadata.ApiMetadata;
  * @author DougLei
  */
 public class Index {
-	private String name;
+	private String title;
 	private String version;
 	private List<ApiCatalogs> apiCatalogs;
 	
-	public Index(String name, String version, short apiCatalogCount) {
-		this.name = name;
+	public Index(String title, String version, short apiCatalogCount) {
+		this.title = title;
 		this.version = version;
 		apiCatalogs = new ArrayList<ApiCatalogs>(apiCatalogCount);
 	}
@@ -29,8 +29,8 @@ public class Index {
 		return apiCatalogs.get(apiCatalogs.size()-1).addApi(api.getName(), api.getMethodName());
 	}
 	
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 	public String getVersion() {
 		return version;
