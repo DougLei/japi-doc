@@ -189,7 +189,7 @@ public abstract class ApiDocBuilder {
 	 * @param title
 	 * @return
 	 */
-	public ApiDocBuilder setName(String title) {
+	public ApiDocBuilder setTitle(String title) {
 		this.title = title;
 		return this;
 	}
