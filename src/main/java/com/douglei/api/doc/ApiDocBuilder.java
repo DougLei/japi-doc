@@ -181,6 +181,7 @@ public abstract class ApiDocBuilder {
 	 */
 	public ApiDocBuilder setFileName(String fileName) {
 		this.fileName = fileName;
+		this.title = fileName;
 		return this;
 	}
 	
