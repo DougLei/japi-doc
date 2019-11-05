@@ -30,6 +30,12 @@ class EntityParameter {
 			}
 			return name.substring(3);
 		}
+		if(name.startsWith("is")) {
+			if(name.charAt(2) > 64 && name.charAt(2) < 91) {
+				return ((char)(name.charAt(2)+32)) + name.substring(3);
+			}
+			return name.substring(2);
+		}
 		return name;
 	}
 	
