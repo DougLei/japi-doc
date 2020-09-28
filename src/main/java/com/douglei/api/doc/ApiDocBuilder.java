@@ -138,7 +138,8 @@ public abstract class ApiDocBuilder {
 	 */
 	private List<ApiCatalogMetadata> apiCatalogMetadatas() throws ClassNotFoundException {
 		ClassScanner scanner = new ClassScanner();
-		List<String> classes = scanner.setClassLoader(ApiDocBuilderContext.getClassLoader()).multiScan(scanPackages);
+		scanner.setClassloader(ApiDocBuilderContext.getClassLoader());
+		List<String> classes = scanner.multiScan(scanPackages);
 		if(classes.size() > 0) {
 			List<ApiCatalogMetadata> apiCatalogMetadatas = new ArrayList<ApiCatalogMetadata>(classes.size());
 			ApiCatalogMetadata acm;
@@ -152,7 +153,6 @@ public abstract class ApiDocBuilder {
 					apiCatalogMetadatas.add(acm);
 				}
 			}
-			scanner.destroy();
 			
 			if(apiCatalogMetadatas.size() > 0) {
 				if(existsHigherPriority) {// 如果存在更高的优先级配置, 则要对集合进行排序
