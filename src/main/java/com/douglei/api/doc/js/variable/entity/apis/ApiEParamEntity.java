@@ -8,7 +8,7 @@ import com.douglei.api.doc.annotation.ApiEntityParam;
 import com.douglei.api.doc.types.DataType;
 import com.douglei.api.doc.types.ParamStructType;
 import com.douglei.api.doc.types.entity.DataTypeMatcher;
-import com.douglei.tools.utils.StringUtil;
+import com.douglei.tools.StringUtil;
 
 /**
  * {@link ApiEntityParam} 注解对应的实体

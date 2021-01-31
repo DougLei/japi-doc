@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.douglei.api.doc.annotation.ApiCatalog;
-import com.douglei.tools.utils.StringUtil;
+import com.douglei.tools.StringUtil;
 
 /**
  * {@link ApiCatalog} 注解的元数据

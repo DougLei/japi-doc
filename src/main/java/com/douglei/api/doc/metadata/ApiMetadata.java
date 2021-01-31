@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.douglei.api.doc.annotation.Api;
 import com.douglei.api.doc.js.variable.entity.apis.ApiEntity;
-import com.douglei.tools.utils.StringUtil;
+import com.douglei.tools.StringUtil;
 
 /**
  * {@link Api} 注解的元数据

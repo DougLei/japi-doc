@@ -2,7 +2,7 @@ package com.douglei.api.doc.metadata;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.douglei.tools.utils.StringUtil;
+import com.douglei.tools.StringUtil;
 
 /**
  * 

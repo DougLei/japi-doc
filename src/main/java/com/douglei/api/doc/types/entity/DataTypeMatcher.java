@@ -8,7 +8,7 @@ import java.util.Set;
 
 import com.douglei.api.doc.ApiDocBuilderContext;
 import com.douglei.api.doc.types.DataType;
-import com.douglei.tools.instances.file.reader.PropertiesReader;
+import com.douglei.tools.file.reader.PropertiesReader;
 
 /**
  * 

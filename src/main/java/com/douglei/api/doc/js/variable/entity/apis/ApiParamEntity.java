@@ -6,7 +6,7 @@ import java.util.List;
 import com.douglei.api.doc.annotation.ApiParam;
 import com.douglei.api.doc.annotation.ApiParam_;
 import com.douglei.api.doc.types.ParamStructType;
-import com.douglei.tools.utils.StringUtil;
+import com.douglei.tools.StringUtil;
 
 /**
  * {@link ApiParam} 注解对应的实体

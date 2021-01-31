@@ -10,7 +10,7 @@ import java.util.zip.ZipInputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.douglei.tools.utils.CloseUtil;
+import com.douglei.tools.CloseUtil;
 
 /**
  * 构建api文件数据到文件夹
