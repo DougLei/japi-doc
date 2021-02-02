@@ -22,7 +22,7 @@ import com.douglei.api.doc.types.DataType;
 import com.douglei.api.doc.types.ParamStructType;
 import com.douglei.api.doc.types.entity.DataTypeMatchEntity;
 import com.douglei.api.doc.types.entity.DataTypeMatcher;
-import com.douglei.tools.instances.resource.scanner.impl.ClassScanner;
+import com.douglei.tools.file.scanner.impl.ClassScanner;
 
 /**
  * api文档构建器

@@ -54,7 +54,7 @@ public class DataTypeMatcher {
 		cache.put(Map.class, DataType.OBJECT);
 		
 		PropertiesReader reader = new PropertiesReader("japi.doc.datatype.match.config.properties");
-		if(reader.ready()) {
+		if(!reader.isEmpty()) {
 			reader.entrySet().forEach(entry -> {
 				try {
 					cache.put(ApiDocBuilderContext.getClassLoader().loadClass(entry.getValue().toString()), toValue(entry.getKey().toString()));

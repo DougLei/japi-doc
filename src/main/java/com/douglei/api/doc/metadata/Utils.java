@@ -17,13 +17,11 @@ class Utils {
 	 */
 	public static String getUrl(String url, RequestMapping requestMapping) {
 		if(StringUtil.isEmpty(url)) {
-			if(requestMapping != null && requestMapping.value().length > 0) {
+			if(requestMapping != null && requestMapping.value().length > 0) 
 				url = requestMapping.value()[0];
-			}
 		}
-		if(StringUtil.notEmpty(url) && url.indexOf('\\') != -1) {
-			url = url.replace('\\', '/');
-		}
+		if(url.indexOf('\\') != -1) 
+			return url.replace('\\', '/');
 		return url;
 	}
 }
